@@ -63,6 +63,11 @@ module CryptKeeper
         CryptKeeper::Provider::Encryptor.any_instance.should_receive(:load).at_least(1).times.with('toolgnitset')
         SensitiveData.find(record).storage
       end
+
+      it "returns the plaintext on decrypt" do
+        record = SensitiveData.create!(storage: 'testing')
+        SensitiveData.find(record).storage.should == 'testing'
+      end
     end
   end
 end
