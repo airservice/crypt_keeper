@@ -61,8 +61,7 @@ module CryptKeeper
       it "decrypts the data" do
         record = SensitiveData.create!(storage: 'testing')
         CryptKeeper::Provider::Encryptor.any_instance.should_receive(:load).at_least(1).times.with('toolgnitset')
-        puts SensitiveData.find(record).storage
-
+        SensitiveData.find(record).storage
       end
     end
   end

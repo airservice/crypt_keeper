@@ -72,7 +72,7 @@ module CryptKeeper
       # Private: Checks if the encryptor response to dump and load
       def valid_encryptor?
         encryptor_klass.instance_methods.include?(:dump) &&
-          encryptor_klass.instance_methods.respond_to?(:load)
+          encryptor_klass.instance_methods.include?(:load)
       end
     end
   end
