@@ -6,6 +6,14 @@ module CryptKeeper
 
       def initialize(*args)
       end
+
+      def encrypt(value)
+        value
+      end
+
+      def decrypt(value)
+        value
+      end
     end
   end
 end
